@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+	<head>
+		<title>Ticketmaster Dashboard</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<base href="http://localhost:8080/">
+	</head>
+
+	<body>
+		<h1>Dashboard</h1>#
+		<div id="navbar">
+			<button type="button" onclick="location.href='create';">Create Ticket</button>
+
+			<button type="button" onclick="location.href='status';">Ticket Status</button>
+
+			<button type="button" onclick="location.href='history';">Ticket History</button>
+
+			<button type="button" onclick="location.href='admin';">Admin Panel</button>
+
+			<button type="button" onclick="location.href='logout';">Logout</button>
+		</div>
+
+		<table>
+			<thead>
+			<tr>
+				<th> Title </th>
+				<th> Description </th>
+				<th> Status </th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:if="${tickets.empty}">
+				<td colspan="2"> No Tickets Available </td>
+			</tr>
+			<tr th:each="ticket : ${tickets}">
+				<td><span th:text="${ticket.head}"> Title </span></td>
+				<td><span th:text="${ticket.body}"> Description </span></td>
+				<td><span th:text="${ticket.status}"> Status </span></td>
+			</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

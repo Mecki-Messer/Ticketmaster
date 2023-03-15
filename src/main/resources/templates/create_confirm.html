@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Ticket Creation Confirmation</title>
+    </head>
+
+    <body>
+    <h1>Ticket Created</h1>
+        <p th:text="'Ticket Title: ' + ${create.head}" />
+        <p th:text="'Ticket Body: ' + ${create.body}" />
+
+
+        <a href="/create">Submit another Ticket</a>
+        <a href="/dashboard">or go to the Dashboard!</a>
+    </body>
+</html>
